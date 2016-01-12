@@ -1,23 +1,28 @@
 package com.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.domain.register.RegisterInfo;
-
 import com.service.RegsiterInfoService;
 
+
 @Controller
-public class RegisterCtrl {
-	
+public class AdminCtrl {
 	@Autowired
 	private RegsiterInfoService registerService;
-
-	@RequestMapping("/register")
-	public String register(RegisterInfo info) {
-		info.setPass(false);
-		registerService.saveRegister(info);
-		return "result";
+	@RequestMapping("/admin")
+	public String admin(){
+		return "admin";
+	}
+	
+	@ResponseBody
+	@RequestMapping("/admin/getAllPro")
+	public List<RegisterInfo> getAllPro(){
+		return registerService.findAll();
 	}
 }

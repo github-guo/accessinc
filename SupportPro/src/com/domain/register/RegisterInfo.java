@@ -1,7 +1,15 @@
 package com.domain.register;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class RegisterInfo {
 	
+	@Id
+	@GeneratedValue 
+	private long id;
 	private String name;
 	private String telPhone;
 	private String email;
@@ -11,6 +19,32 @@ public class RegisterInfo {
 	private String proInstroduction;
 	private String remark;
 	private String picLoc;
+	private boolean pass;
+	
+
+	public String getOrgInstroduction() {
+		return orgInstroduction;
+	}
+
+	public void setOrgInstroduction(String orgInstroduction) {
+		this.orgInstroduction = orgInstroduction;
+	}
+
+	public String getProInstroduction() {
+		return proInstroduction;
+	}
+
+	public void setProInstroduction(String proInstroduction) {
+		this.proInstroduction = proInstroduction;
+	}
+
+	public boolean isPass() {
+		return pass;
+	}
+
+	public void setPass(boolean pass) {
+		this.pass = pass;
+	}
 
 	public String getName() {
 		return name;

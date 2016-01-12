@@ -28,27 +28,27 @@
 			<form action="${basePath }register" method="post">
 				<div class="form-group">
 					<label for="name">姓名：</label> <input
-						type="text" class="form-control" id="name"/>
+						type="text" class="form-control" name="name"/>
 				</div>
 				<div class="form-group">
 					<label for="telPhone">手机：</label> <input
-						type="text" class="form-control" id="telPhone"
+						type="text" class="form-control" name="telPhone"
 						placeholder="telPhone"/>
 				</div>
 
 				<div class="form-group">
 					<label for="email">邮箱：</label> <input
-						type="email" class="form-control" id="email"
+						type="email" class="form-control" id="email" name="email"
 						placeholder="Email">
 				</div>
 							<div class="form-group">
 					<label for="wechatOrQQ">机构/项目名称</label> <input
-						type="text" class="form-control" id="org"
+						type="text" class="form-control" name="org"
 						placeholder="org">
 				</div>
 							<div class="form-group">
 					<label for="wechatOrQQ">QQ/微信：</label> <input
-						type="text" class="form-control" id="wechatOrQQ"
+						type="text" class="form-control" name="wechatOrQQ"
 						placeholder="wechatOrQQ">
 				</div>
 				
