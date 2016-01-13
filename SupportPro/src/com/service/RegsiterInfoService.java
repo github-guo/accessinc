@@ -19,4 +19,12 @@ public class RegsiterInfoService {
 	public List<RegisterInfo> findAll() {
 		return dao.findAll();
 	}
+
+	public List<RegisterInfo> findWaiting() {
+		return dao.findByPass(false);
+	}
+
+	public List<RegisterInfo> findPassed() {
+		return dao.findByPass(true);
+	}
 }

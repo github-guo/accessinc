@@ -29,8 +29,8 @@
 	<div class="container">
 		<ul class="nav nav-tabs">
 			<li role="presentation"><a id="allPro">所有项目</a></li>
-			<li role="presentation"><a href="#">待审核</a></li>
-			<li role="presentation"><a href="#">已审核通过</a></li>
+			<li role="presentation"><a id="waiting">待审核</a></li>
+			<li role="presentation"><a id="passed">已审核通过</a></li>
 		</ul>
 	</div>
 	<h3></h3>
@@ -45,10 +45,7 @@
 							<th>项目提交者</th>
 						</tr>
 					</thead>
-					<tr>
-						<td>testing pro name</td>
-						<td>testing pro owner</td>
-					</tr>
+					
 				</table>
 			</div>
 			<div class="col-xs-2"></div>

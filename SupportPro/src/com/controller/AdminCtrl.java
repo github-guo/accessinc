@@ -25,4 +25,17 @@ public class AdminCtrl {
 	public List<RegisterInfo> getAllPro(){
 		return registerService.findAll();
 	}
+	
+	
+	@ResponseBody
+	@RequestMapping("/admin/getWaiting")
+	public List<RegisterInfo> getWaiting(){
+		return registerService.findWaiting();
+	}
+	
+	@RequestMapping("/admin/getPassed")
+	@ResponseBody
+	public List<RegisterInfo> getPassed(){
+		return registerService.findPassed();
+	}
 }
