@@ -11,7 +11,7 @@ public class RegisterInfo {
 	
 	@Id
 	@GeneratedValue 
-	private long id;
+	private Long id;
 	private String name;
 	private String telPhone;
 	private String email;
@@ -127,4 +127,14 @@ public class RegisterInfo {
 		}
 		return true;
 	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+	
+	
 }

@@ -13,5 +13,7 @@ import com.domain.register.RegisterInfo;
 public interface RegisterInfoDao extends JpaRepository<RegisterInfo, Long>{
 
 	List<RegisterInfo> findByPass(boolean passed);
+
+	RegisterInfo findById(long id);
 	
 }

@@ -27,4 +27,8 @@ public class RegsiterInfoService {
 	public List<RegisterInfo> findPassed() {
 		return dao.findByPass(true);
 	}
+
+	public RegisterInfo findByID(long id) {
+		return dao.findById(id);
+	}
 }
