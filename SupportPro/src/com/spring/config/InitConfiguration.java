@@ -2,6 +2,8 @@ package com.spring.config;
 
 
 import javax.servlet.Filter;
+import javax.servlet.MultipartConfigElement;
+import javax.servlet.ServletRegistration.Dynamic;
 
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
@@ -31,5 +33,4 @@ public class InitConfiguration extends AbstractAnnotationConfigDispatcherServlet
 		return new Filter[]{new CharacterEncodingFilter("utf-8")};
 	}
 
-	
 }

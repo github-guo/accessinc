@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import org.springframework.util.StringUtils;
+
 @Entity
 public class RegisterInfo {
 	
@@ -118,4 +120,11 @@ public class RegisterInfo {
 		this.remark = remark;
 	}
 
+	
+	public boolean canUsed(){
+		if(StringUtils.isEmpty(email)||StringUtils.isEmpty(telPhone)||StringUtils.isEmpty(orgInstroduction)||StringUtils.isEmpty(proInstroduction)||StringUtils.isEmpty(name)){
+			return false;
+		}
+		return true;
+	}
 }
