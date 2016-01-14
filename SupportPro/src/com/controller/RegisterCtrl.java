@@ -23,7 +23,7 @@ public class RegisterCtrl {
 	private RegsiterInfoService registerService;
 
 	@RequestMapping("/regist")
-	public String register(RegisterInfo info,@RequestParam("pic")MultipartFile images,HttpServletRequest request,HttpSession session) {
+	public String register(RegisterInfo info,@RequestParam("pic")MultipartFile []images,HttpServletRequest request,HttpSession session) {
 		if(info.canUsed()){
 			info.setPass(false);
 			
@@ -32,11 +32,14 @@ public class RegisterCtrl {
 				if(file.exists()==false){
 					file.mkdir();
 				}
-				if(!images.isEmpty()){
-					File image = new File(file.getAbsolutePath()+File.separator+info.getName()+"_"+info.getOrg()+"."+getExt(images.getOriginalFilename()));
-					images.transferTo(image);
-					info.setPicLoc(image.getAbsolutePath());
+				for(MultipartFile pic1:images){
+					if(!pic1.isEmpty()){
+						File image = new File(file.getAbsolutePath()+File.separator+info.getName()+"_"+info.getOrg()+"."+getExt(pic1.getOriginalFilename()));
+						pic1.transferTo(image);
+						info.setPicLoc(image.getAbsolutePath());
+					}
 				}
+				
 			} catch (IllegalStateException e) {
 				e.printStackTrace();
 			} catch (IOException e) {

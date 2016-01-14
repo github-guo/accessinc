@@ -52,7 +52,7 @@
 	            	if(data.tips=='fail'){
 	            		$("h4").text('账号或者密码错误');
 	            	}else{
-	            		window.location.href=basePath+"/admin";
+	            		window.location.href=basePath+"admin";
 	            	}
 	            },
 	            error: function (XMLHttpRequest,

@@ -72,6 +72,8 @@
 				<div class="form-group">
 					<label for="picLoc">该项目是否有相关图片</label> <input type="file"
 						name="pic">
+						<input type="file"
+						name="pic">
 					<p class="help-block">请上传相关图片</p>
 				</div>
 				<label>希望我们给您提供什么样的帮助</label>

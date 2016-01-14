@@ -128,7 +128,7 @@ public class RegisterInfo {
 		return true;
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 

@@ -10,8 +10,8 @@
 		destroy-method="close">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
 		<property name="url" value="jdbc:mysql://localhost/shiro?useunicode=true&amp;characterEncoding=utf-8" />
-		<property name="username" value="root" />
-		<property name="password" value="" />
+		<property name="username" value="dingfr" />
+		<property name="password" value="12345678" />
 
 		<property name="initialSize" value="1" />
 		<property name="maxActive" value="100" />
