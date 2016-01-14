@@ -7,7 +7,7 @@
 	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
 			+ path + "/";
 %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -16,11 +16,11 @@
 	href="${basePath}bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css"
 	href="${basePath}appcss/admin.css">
-<SCRIPT language=javascript
-	src="${basePath}bootstrap/js/jquery-1.12.0.min.js"></script>
-<SCRIPT language=javascript
-	src="${basePath}bootstrap/js/bootstrap.min.js"></script>
-<SCRIPT language=javascript src="${basePath}appjs/admin.js"></script>
+<SCRIPT src="${basePath}bootstrap/js/jquery-1.12.0.min.js"></script>
+<SCRIPT src="${basePath}bootstrap/js/bootstrap.min.js"></script>
+<script src="${basePath }appjs/RegisterInfoModal.js"></script>
+<SCRIPT src="${basePath}appjs/admin.js"></script>
+
 <title></title>
 </head>
 <body>
@@ -31,9 +31,46 @@
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal"
 						aria-hidden="true">&times;</button>
-					<h4 class="modal-title" id="myModalLabel">模态框（Modal）标题</h4>
+					<h4 class="modal-title" id="myModalLabel">项目详细信息</h4>
 				</div>
-				<div class="modal-body">在这里添加一些文本</div>
+				<div class="modal-body">
+					<div class="form-group">
+						<label for="name">姓名：</label> <input type="text"
+							class="form-control" name="name" />
+					</div>
+					<div class="form-group">
+						<label for="telPhone">手机：</label> <input type="text"
+							class="form-control" name="telPhone" placeholder="telPhone" />
+					</div>
+
+					<div class="form-group">
+						<label for="email">邮箱：</label> <input type="email"
+							class="form-control" id="email" name="email" placeholder="Email">
+					</div>
+					<div class="form-group">
+						<label for="org">机构/项目名称</label> <input type="text"
+							class="form-control" name="org" placeholder="org">
+					</div>
+					<div class="form-group">
+						<label for="wechatOrQQ">QQ/微信：</label> <input type="text"
+							class="form-control" name="wechatOrQQ" placeholder="wechatOrQQ">
+					</div>
+
+					<div class="form-group">
+						<label for="orgInstroduction">机构/个人简介</label>
+						<textarea class="form-control" rows="3" title="机构/个人简介"
+							name="orgInstroduction"></textarea>
+					</div>
+					<div class="form-group">
+						<label for="proInstroduction">项目介绍</label>
+						<textarea class="form-control" rows="3" name="proInstroduction"></textarea>
+					</div>
+					<div class="form-group">
+						<label for="picLoc">该项目是否有相关图片</label>
+					</div>
+					<label>希望我们给您提供什么样的帮助</label>
+					<textarea class="form-control" rows="3" name="remark"></textarea>
+				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">关闭
 					</button>
@@ -70,6 +107,6 @@
 				<div class="col-xs-2"></div>
 			</div>
 		</div>
-        </div>
+	</div>
 </body>
 </html>
