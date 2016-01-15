@@ -23,11 +23,11 @@
 <body>
 <div class=".container-fluid">
 <div class="row">
-<div>
+<%-- <div>
 <img src="${basePath }image/regSuc.jpg" class="img-responsive" alt="Responsive image">
+</div> --%>
 </div>
-</div>
-<h2>well done .恭喜您报名成功，请等待下一步通知</h2>
+<h1>well done .恭喜您报名成功，请等待下一步通知,留意邮件通知</h1>
 </div>
 </body>
 </html>

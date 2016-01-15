@@ -7,17 +7,11 @@
 	<description>Email配置</description>
 
 	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
-		<property name="javaMailProperties">
-			<props>
-				<prop key="mail.smtp.host">smtp.qq.com</prop>
-				<prop key="mail.smtp.port">465</prop>
-				<prop key="username">547122965@qq.com</prop>
-				<prop key="password">llc772332</prop>
-				<prop key="defaultEncoding">utf-8</prop>
-				<prop key="mail.transport.protocol">smtp</prop>
-				<prop key="mail.smtp.timeout">3000</prop>
-			</props>
-		</property>
+		<property name="username" value="547122965@qq.com"></property>
+		<property name="password" value="llc772332"></property>
+		<property name="defaultEncoding" value="utf-8"></property>
+		<property name="host" value="smtp.qq.com"></property>
+		<property name="port" value="587"></property>
 	</bean>
 
 	<bean id="mailUtil" class="com.utils.MailUtil">
@@ -33,7 +27,8 @@
 
 
 	<bean class="com.utils.AdminJudgNoticeMailTemplate">
-		<property name="templatePath" value="classpath:config/template/adminNoticeTemplate.txt"></property>
+		<property name="templatePath"
+			value="classpath:config/template/adminNoticeTemplate.txt"></property>
 		<property name="encode" value="utf-8"></property>
 		<property name="title" value="公益项目审核通过"></property>
 	</bean>

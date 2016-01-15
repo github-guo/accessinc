@@ -53,12 +53,13 @@ public class RegisterCtrl {
 				}
 				
 				registerService.saveRegister(info);
-//				System.out.println(mailTemplate.getMail(info.getName(),info.getProInstroduction()));
+				System.out.println(mailTemplate.getMail(info.getName(),info.getProInstroduction()));
 				mailUtil.sendSimpleMessage(info.getEmail(), mailTemplate.getTitle(), mailTemplate.getMail(info.getName(),info.getProInstroduction()));
 				session.setAttribute("result", "success");
 				return "redirect:result";
 
 			} catch (MailSendException e) {
+				e.printStackTrace();
 				logger.error("can  not send email to "+info.getEmail()+",user name:"+info.getName());
 				return "redirect:result";
 			} catch (Exception e) {

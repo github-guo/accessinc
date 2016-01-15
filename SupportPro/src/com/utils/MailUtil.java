@@ -13,6 +13,7 @@ public class MailUtil {
     SimpleMailMessage mail = new SimpleMailMessage();
     mail.setFrom(senderAddress);
     mail.setTo(to);
+//    mail.setCc();
     mail.setSubject(subject);
     mail.setText(text);
     sender.send(mail);
