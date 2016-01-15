@@ -18,6 +18,8 @@ import com.domain.register.RegisterInfo;
 import com.domain.register.User;
 import com.service.RegsiterInfoService;
 import com.service.UserService;
+import com.utils.AdminJudgNoticeMailTemplate;
+import com.utils.MailUtil;
 
 @Controller
 public class AdminCtrl {
@@ -25,7 +27,10 @@ public class AdminCtrl {
 	private RegsiterInfoService registerService;
 	@Autowired
 	private UserService userService;
-
+	@Autowired
+	private MailUtil mailUtil;
+	@Autowired
+	private AdminJudgNoticeMailTemplate template;
 	@RequestMapping("/admin")
 	public String admin() {
 		return "admin";
@@ -73,5 +78,31 @@ public class AdminCtrl {
 			session.setAttribute("admin", user.getName());
 		}
 		return respMap;
+	}
+	
+	@ResponseBody
+	@RequestMapping("/updateRegInfo")
+	public Map<String, String> updateRegisterInfo(@RequestParam("id") Long id,@RequestParam("pass") String result ){
+		Map<String, String> paraMap=new HashMap<>();
+		RegisterInfo info = new RegisterInfo();
+		boolean passed;
+		if("passed".equals(result)){
+			passed=registerService.setResult(id,true,info);
+		}else{
+			passed=registerService.setResult(id,false,info);
+			
+		}
+		
+		mailUtil.sendSimpleMessage(info.getEmail(), template.getTitle(), template.getMail(info.getName(),info.getProInstroduction(),(info.isPass()==true?"通过审核":"被否决")));
+		
+		System.out.println(template.getMail());
+		
+		if(passed){
+			paraMap.put("result","success");
+		}else {
+			paraMap.put("result", "fail");
+		}
+		paraMap.put("selected", result);
+		return paraMap;
 	}
 }

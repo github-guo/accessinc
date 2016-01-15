@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd"
+	default-lazy-init="true">
+
+	<description>Email配置</description>
+
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.smtp.host">smtp.qq.com</prop>
+				<prop key="mail.smtp.port">465</prop>
+				<prop key="username">547122965@qq.com</prop>
+				<prop key="password">llc772332</prop>
+				<prop key="defaultEncoding">utf-8</prop>
+				<prop key="mail.transport.protocol">smtp</prop>
+				<prop key="mail.smtp.timeout">3000</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="mailUtil" class="com.utils.MailUtil">
+		<property name="senderAddress" value="547122965@qq.com"></property>
+	</bean>
+
+	<bean class="com.utils.RegisterMailTemplate">
+		<property name="templatePath" value="classpath:config/template/mailTemplate.txt"></property>
+		<property name="encode" value="utf-8"></property>
+		<property name="title" value="公益项目提交成功通知"></property>
+	</bean>
+
+
+
+	<bean class="com.utils.AdminJudgNoticeMailTemplate">
+		<property name="templatePath" value="classpath:config/template/adminNoticeTemplate.txt"></property>
+		<property name="encode" value="utf-8"></property>
+		<property name="title" value="公益项目审核通过"></property>
+	</bean>
+</beans>

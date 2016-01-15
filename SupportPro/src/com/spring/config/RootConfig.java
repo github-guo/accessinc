@@ -20,7 +20,7 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 
 @Configuration
 @EnableJpaRepositories(basePackages="com.repository")
-@ImportResource("/config/dataSource.xml")
+@ImportResource(value={"/config/dataSource.xml","/config/mail.xml"})
 public class RootConfig {
 	/*
 	 * @Bean public LocalSessionFactoryBean

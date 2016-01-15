@@ -1,4 +1,7 @@
 eclipse.preferences.version=1
 encoding//WebContent/WEB-INF/jsp/result.jsp=UTF-8
+encoding//WebContent/config/template/mailTemplate.txt=UTF-8
 encoding//src/com/controller/AdminCtrl.java=UTF-8
 encoding//src/com/inteceptors/AdminInterceptor.java=UTF-8
+encoding//src/config/template/adminNoticeTemplate.txt=UTF-8
+encoding//src/config/template/mailTemplate.txt=UTF-8
