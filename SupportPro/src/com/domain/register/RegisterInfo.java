@@ -1,5 +1,7 @@
 package com.domain.register;
 
+import java.lang.reflect.Field;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -136,5 +138,17 @@ public class RegisterInfo {
 		this.id = id;
 	}
 	
-	
+	public void copy(RegisterInfo info){
+		this.email=info.email;
+		this.id=info.id;
+		this.name=info.name;
+		this.org=info.org;
+		this.orgInstroduction=info.orgInstroduction;
+		this.pass=info.pass;
+		this.picLoc=info.picLoc;
+		this.proInstroduction=info.proInstroduction;
+		this.remark=info.remark;
+		this.telPhone=info.telPhone;
+		this.wechatOrQQ=info.wechatOrQQ;
+	}
 }
