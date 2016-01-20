@@ -1,6 +1,5 @@
 package com.domain.register;
 
-import java.lang.reflect.Field;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
