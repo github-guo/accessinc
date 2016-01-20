@@ -1,5 +1,5 @@
-SupportPro/.settings/**
-SupportPro/target/**
-SupportPro/build/**
-SupportPro/.classpath
-SupportPro/.project
+.settings/
+target/
+/build
+.classpath
+.project
