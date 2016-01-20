@@ -1,4 +1,5 @@
-SupportPro/target/m2e-wtp/web-resources/META-INF/maven/SupportPro/SupportPro/pom.properties
-SupportPro/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
-SupportPro/WebContent/config/dataSource.xml
-SupportPro/WebContent/config/dataSource.xml
+SupportPro/.settings/**
+SupportPro/target/**
+SupportPro/build/**
+SupportPro/.classpath
+SupportPro/.project
