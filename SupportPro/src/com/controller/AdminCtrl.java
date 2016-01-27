@@ -1,9 +1,11 @@
 package com.controller;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -82,8 +84,11 @@ public class AdminCtrl {
 	
 	@ResponseBody
 	@RequestMapping("/updateRegInfo")
-	public Map<String, String> updateRegisterInfo(@RequestParam("id") Long id,@RequestParam("pass") String result ){
+	public Map<String, String> updateRegisterInfo(@RequestParam("id") Long id,@RequestParam("pass") String result,HttpServletRequest request ){
 		Map<String, String> paraMap=new HashMap<>();
+		String basicpath=request.getSession().getServletContext().getRealPath("/");
+		System.out.println(basicpath);
+		String path=basicpath+File.separator+"config"+File.separator+"template"+File.separator;
 		RegisterInfo info = new RegisterInfo();
 		boolean passed;
 		if("passed".equals(result)){
@@ -93,7 +98,7 @@ public class AdminCtrl {
 			
 		}
 		
-		mailUtil.sendSimpleMessage(info.getEmail(), template.getTitle(), template.getMail(info.getName(),info.getProInstroduction(),(info.isPass()==true?"通过审核":"被否决")));
+		mailUtil.sendSimpleMessage(info.getEmail(), template.getTitle(), template.getMail(info.getName(),info.getProInstroduction(),(info.isPass()==true?"通过审核":"被否决")),path);
 		
 		System.out.println(template.getMail());
 		

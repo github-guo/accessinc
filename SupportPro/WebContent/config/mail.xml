@@ -16,6 +16,7 @@
 
 	<bean id="mailUtil" class="com.utils.MailUtil">
 		<property name="senderAddress" value="547122965@qq.com"></property>
+		<property name="attachmentFile" value="hello.txt"></property>
 	</bean>
 
 	<bean class="com.utils.RegisterMailTemplate">

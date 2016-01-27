@@ -54,7 +54,10 @@ public class RegisterCtrl {
 				
 				registerService.saveRegister(info);
 				System.out.println(mailTemplate.getMail(info.getName(),info.getProInstroduction()));
-				mailUtil.sendSimpleMessage(info.getEmail(), mailTemplate.getTitle(), mailTemplate.getMail(info.getName(),info.getProInstroduction()));
+				String basicpath=request.getSession().getServletContext().getRealPath("/");
+				System.out.println(basicpath);
+				String path = basicpath+File.separator+"config"+File.separator+"template"+File.separator;
+				mailUtil.sendSimpleMessage(info.getEmail(), mailTemplate.getTitle(), mailTemplate.getMail(info.getName(),info.getProInstroduction()),path);
 				session.setAttribute("result", "success");
 				return "redirect:result";
 
